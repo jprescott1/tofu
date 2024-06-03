@@ -1,8 +1,4 @@
-module "lab" {
-  source = "../modules/k8s-lab"
-}
-
-resource "proxmox_vm_qemu" "lab" {
+resource "proxmox_vm_qemu" "test-vm" {
   name        = "test-vm"
   target_node = "kube"
   vmid        = 2000
