@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "proxmox" {
-  endpoint = PROX_ENDPOINT
+  endpoint = var.prox_endpoint
   insecure = true
 
   ssh {
