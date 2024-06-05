@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "proxmox" {
-  endpoint = "https://kube.tail666eff.ts.net:8006"
+  endpoint = PROX_ENDPOINT
   insecure = true
 
   ssh {
