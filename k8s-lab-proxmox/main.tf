@@ -27,10 +27,37 @@ resource "proxmox_virtual_environment_file" "ubuntu_cloud_image" {
   }
 }
 
-resource "proxmox_virtual_environment_vm" "ubuntu_vm_cloned" {
-  name       = "ubuntu-test"
+resource "proxmox_virtual_environment_vm" "control_plane_cloned" {
+  count = 1
+  name       = "control-plane"
   node_name  = "kube"
-  vm_id      = 1000
+
+  clone {
+    vm_id = 100
+  }
+
+  cpu {
+    cores = 2
+  }
+  memory {
+    dedicated = 8000
+  }
+
+  initialization {
+    ip_config {
+      ipv4 {
+        address = "dhcp"
+      }
+    }
+  }
+
+  started = true
+}
+
+resource "proxmox_virtual_environment_vm" "worker_node_cloned" {
+  count = 3
+  name       = "worker-node${count.index}"
+  node_name  = "kube"
 
   clone {
     vm_id = 100
