@@ -33,7 +33,7 @@ resource "proxmox_virtual_environment_vm" "control_plane_cloned" {
   node_name  = "kube"
 
   clone {
-    vm_id = 100
+    vm_id = 7000
   }
 
   cpu {
@@ -60,7 +60,7 @@ resource "proxmox_virtual_environment_vm" "worker_node_cloned" {
   node_name  = "kube"
 
   clone {
-    vm_id = 100
+    vm_id = 7000
   }
 
   cpu {
