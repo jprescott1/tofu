@@ -33,14 +33,14 @@ resource "proxmox_virtual_environment_vm" "control_plane_cloned" {
   node_name  = "kube"
 
   clone {
-    vm_id = 7000
+    vm_id = 8000
   }
 
   cpu {
     cores = 2
   }
   memory {
-    dedicated = 8000
+    dedicated = 8500
   }
 
   initialization {
@@ -60,14 +60,14 @@ resource "proxmox_virtual_environment_vm" "worker_node_cloned" {
   node_name  = "kube"
 
   clone {
-    vm_id = 7000
+    vm_id = 8000
   }
 
   cpu {
     cores = 2
   }
   memory {
-    dedicated = 8000
+    dedicated = 8500
   }
 
   initialization {
