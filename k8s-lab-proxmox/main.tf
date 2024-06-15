@@ -40,7 +40,7 @@ resource "proxmox_virtual_environment_vm" "control_plane_cloned" {
     cores = 2
   }
   memory {
-    dedicated = 8500
+    dedicated = 8200
   }
 
   initialization {
@@ -67,7 +67,7 @@ resource "proxmox_virtual_environment_vm" "worker_node_cloned" {
     cores = 2
   }
   memory {
-    dedicated = 8500
+    dedicated = 8200
   }
 
   initialization {
